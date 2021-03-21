@@ -1,4 +1,11 @@
 <html>
+    <?php
+        session_start();
+        if ($_SESSION['logged']) {
+            echo "<script>alert('You\'re not supposed to be here. Redirecting you to home page')</script>";
+            header("refresh:0.1; url=home.php");
+        }
+    ?>
     <head>
         <link rel='stylesheet' href='./style.css'>
     </head>
