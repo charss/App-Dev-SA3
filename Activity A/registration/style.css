@@ -1,0 +1,27 @@
+div {
+    width: 300px;
+}
+
+div * {
+    width: 100%;
+}
+
+input {
+    margin-bottom: 10px;;
+}
+
+input[type='submit'] {
+    padding: 5px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
