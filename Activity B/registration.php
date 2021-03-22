@@ -1,29 +1,31 @@
 <html>
     <head>
-        <link rel='stylesheet' href='./reg_style.css'>
+        <link rel='stylesheet' href='./style.css'>
     </head>
     <body>
     <form method='post'>
-        <div>
+        <div class='registration_div'>
+            <h1 class='header'>Register</h1>
             <label>First Name<label><br>
-            <input type='text' name='firstname'/><br>
+            <input class='regis_input' type='text' name='firstname'/><br>
             <label>Middle Name<label><br>
-            <input type='text' name='middlename'/><br>
+            <input class='regis_input' type='text' name='middlename'/><br>
             <label>Last Name<label><br>
-            <input type='text' name='lastname'/><br>
+            <input class='regis_input' type='text' name='lastname'/><br>
             <label>Username<label><br>
-            <input type='text' name='username'/><br>
+            <input class='regis_input' type='text' name='username'/><br>
             <label>Password<label><br>
-            <input type='text' name='password'/><br>
+            <input class='regis_input' type='text' name='password'/><br>
             <label>Confirm Password<label><br>
-            <input type='text' name='c_password'/><br>
+            <input class='regis_input' type='text' name='c_password'/><br>
             <label>Birthday<label><br>
-            <input type='date' name='birthday'/><br>
+            <input class='regis_input' type='date' name='birthday'/><br>
             <label>Email<label><br>
-            <input type='email' name='email'/><br>
+            <input class='regis_input' type='email' name='email'/><br>
             <label>Contact Number<label><br>
-            <input type='number' name='number'/><br>
+            <input class='regis_input' type='number' name='number'/><br>
             <input type='submit' name='submit'>
+            <a class='register' href='login.php'>Sign in instead</a>
         </div>
     </form>
 
@@ -52,13 +54,20 @@
                 die('Connection failed: ' . $conn->connect_error);
             }
 
-            $sql = "INSERT INTO users(firstname, middlename, lastname, username, pass, birthday, email, contactnum) VALUES ('$firstname', '$middlename', '$lastname', '$user', '$pass', '$birthday', '$email', '$number')";
-
-            if ($conn->query($sql) === TRUE) {
-                echo "<script>alert('New record created successfully')</script>";
+            $sql = "SELECT username FROM users WHERE username='$user'";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                echo "<script>alert('Username already exist')</script>";
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                $sql = "INSERT INTO users(firstname, middlename, lastname, username, pass, birthday, email, contactnum) VALUES ('$firstname', '$middlename', '$lastname', '$user', '$pass', '$birthday', '$email', '$number')";
+
+                if ($conn->query($sql) === TRUE) {
+                    echo "<script>alert('New record created successfully')</script>";
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
             }
+
 
             $conn->close();
         }

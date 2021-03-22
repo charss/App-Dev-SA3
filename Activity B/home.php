@@ -17,21 +17,24 @@
             $number = $_SESSION['number'];
 			$pass = $_SESSION['pass'];
 	?>
-	<div>
+	<div class='parent'>
 		<h1>User Information Form</h1>
-		Welcome <?php echo "$firstname $middlename $lastname"; ?><br>
-		Birthday: <?php echo $birthday; ?><br>
-		Contact Details <br>
-		Email: <?php echo $email; ?><br>
-		Contact:  <?php echo $number ?><br>
-		<a href='logout.php'>logout</a> <br>
-			-----------------------------------
+		<b>Welcome</b> <?php echo "$firstname $middlename $lastname"; ?><br>
+		<b>Birthday:</b> <?php echo $birthday; ?><br>
+		<b>Contact Details</b> <br>
+		<b>&emsp;Email:</b> <?php echo $email; ?><br>
+		<b>&emsp;Contact:</b>  <?php echo $number ?><br>
+		<a href='logout.php'>logout</a>
+
 			<form method='post'>
-				RESET PASSWORD <br>
-				<label>Enter Current Password:</label> <input type='password' name='old_password'><br>
-				<label>Enter New Password:</label> <input type='password' name='new_password'><br>
-				<label>Re-Enter New Password:</label> <input type='password' name='cnew_password'><br>
-				<input type='submit' name='submit' value='Reset Password'>
+				<div class='reset'>
+					RESET PASSWORD <br>
+					<label>Enter Current Password:</label> <input type='password' name='old_password'><br>
+					<label>Enter New Password:</label> <input type='password' name='new_password'><br>
+					<label>Re-Enter New Password:</label> <input type='password' name='cnew_password'><br>
+					<input type='submit' name='submit' value='Reset Password'>
+				</div>
+			</form>
 	<?php
 		} else {
 			header("location: protected.php");
@@ -47,9 +50,9 @@
 				$new = $_POST['new_password'];
 				$confirm = $_POST['cnew_password'];
 				if ($old != $pass) {
-					echo "<script>alert('Current password incorrect!')</script>";
+					echo "<script>alert('Current password is not same with the old password.')</script>";
 				} elseif ($new != $confirm) {
-					echo "<script>alert('New password and confirm password does not match!')</script>";
+					echo "<script>alert('New password and Re-Enter new password should be the same.')</script>";
 				} else {
 					$conn = new mysqli('localhost', 'root', '', 'app_dev_s3');
 					if($conn->connect_error) {

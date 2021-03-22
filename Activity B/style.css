@@ -1,15 +1,62 @@
-div {
-  width: 300px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+* {
+    font-family: 'Montserrat';
 }
 
-div input[type='text'], input[type='password'] {
-  width: 100%;
+.login_div {
+    border: 1px solid black;
+    position: absolute;
+    width: 400px;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
 }
 
-input[type='text'], input[type='password']{
-  margin-bottom: 10px;
+.login_input {
+    padding: 15px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.regis_input {
+    border: 1px solid black;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 input[type='submit'] {
-  padding: 5px;
+    padding: 5px;
+    float: right;
+    width: 100px;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+}
+
+.register {
+    float: left;
+    text-decoration: none;
+    color: blue;
+}
+
+
+.registration_div {
+    border: 1px solid black;
+    position: absolute;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    height: auto;
+    left: 50%;
+    top: 50%;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
 }

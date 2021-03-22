@@ -10,14 +10,15 @@
         <link rel='stylesheet' href='./style.css'>
     </head>
     <body>
-    <form action='protected.php' method='post'>
-        <div>
-            <label>Username<label><br>
-            <input type='text' id='username' name='username'><br>
-            <label>Password<label><br>
-            <input type='password' id='password' name='password'><br>
-            <input type='submit' name='submit'>
-        </div>
-    </form>
+    
+        <form action='protected.php' method='post'>
+            <div class='login_div'>
+                <h1 class='header'>Sign In</h1>
+                <input class='login_input' type='text' id='username' name='username' placeholder='username'><br>
+                <input class='login_input' type='password' id='password' name='password' placeholder='password'><br>
+                <a class='register' href='registration.php'>Register</a>
+                <input class='submit' type='submit' name='submit'>
+            </div>
+        </form>
     </body>
 </html>
