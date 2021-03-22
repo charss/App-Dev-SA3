@@ -1,0 +1,15 @@
+div {
+  width: 300px;
+}
+
+div input[type='text'], input[type='password'] {
+  width: 100%;
+}
+
+input[type='text'], input[type='password']{
+  margin-bottom: 10px;
+}
+
+input[type='submit'] {
+  padding: 5px;
+}

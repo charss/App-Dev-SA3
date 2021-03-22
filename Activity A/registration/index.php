@@ -20,7 +20,7 @@
             <label>Birthday<label><br>
             <input type='date' name='birthday'/><br>
             <label>Email<label><br>
-            <input type='text' name='email'/><br>
+            <input type='email' name='email'/><br>
             <label>Contact Number<label><br>
             <input type='number' name='number'/><br>
             <input type='submit' name='submit'>
