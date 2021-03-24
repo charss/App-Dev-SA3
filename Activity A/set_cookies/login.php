@@ -9,9 +9,9 @@
     <head>
         <link rel='stylesheet' href='./style.css'>
     </head>
-    <body>
+    <body class='parent'>
     <form action='protected.php' method='post'>
-        <div>
+        <div class='container'>
             <label>Username<label><br>
             <input type='text' id='username' name='username'><br>
             <label>Password</label><br>

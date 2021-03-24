@@ -15,9 +15,9 @@
             <label>Username<label><br>
             <input class='regis_input' type='text' name='username'/><br>
             <label>Password<label><br>
-            <input class='regis_input' type='text' name='password'/><br>
+            <input class='regis_input' type='password' name='password'/><br>
             <label>Confirm Password<label><br>
-            <input class='regis_input' type='text' name='c_password'/><br>
+            <input class='regis_input' type='password' name='c_password'/><br>
             <label>Birthday<label><br>
             <input class='regis_input' type='date' name='birthday'/><br>
             <label>Email<label><br>

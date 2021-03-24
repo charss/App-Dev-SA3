@@ -2,9 +2,10 @@
     <head>
         <link rel='stylesheet' href='./style.css'>
     </head>
-    <body>
+    <body class='parent'>
     <form method='post'>
-        <div>
+        <div class='container'>
+            
             <label>First Name<label><br>
             <input type='text' name='firstname'/><br>
             <label>Middle Name<label><br>
